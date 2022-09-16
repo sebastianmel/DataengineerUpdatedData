@@ -1,0 +1,1 @@
+SELECT DISTINCT customer.first_name, customer.last_name, rental.customer_id, COUNT(rental_id), address.address, address.latitude, address.longitude FROM `rental` left join `customer` on rental.customer_id = customer.customer_id left join `address` on customer.address_id = address.address_id GROUP BY customer_id ORDER BY COUNT(rental_id) DESC;
